@@ -1,0 +1,9 @@
+def deterministic_quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    # Select the middle element as the pivot
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return deterministic_quicksort(left) + middle + deterministic_quicksort(right)
